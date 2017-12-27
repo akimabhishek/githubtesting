@@ -1,0 +1,34 @@
+package com.json.test;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class JSONDemo {
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException
+	{
+		/* Object obj = new JSONParser().parse(new FileReader("sampleJSONFile.json"));		 
+		 JSONObject jo = (JSONObject) obj;
+		 JSONArray ja = (JSONArray) jo;
+		 Iterator itr2 = ja.iterator();*/
+		
+		JSONObject arr = (JSONObject) new JSONParser().parse(new FileReader("sampleJSONFile.json"));
+		 Iterator itr2 = ((List) arr).iterator();
+		 while(itr2.hasNext())
+		 {
+			 Map.Entry pair = (Entry) itr2.next();
+			 System.out.println(pair.getKey() + " : " + pair.getValue());
+		 }
+	}
+	
+}

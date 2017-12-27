@@ -1,0 +1,52 @@
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+public class collection {
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static void main(String[] args) {
+	
+		Map<String,Integer> map = new HashMap<String,Integer>();;
+		for(Integer i=1;i<5;i++)
+		{	
+			
+			map.put("A",i);
+		}
+		
+		for(Map.Entry<String,Integer> entry : map.entrySet())
+		{
+			System.out.println(entry.getKey()+" "+entry.getValue());
+		}
+		
+		//List<Entry<String, Integer>> list = new LinkedList<Entry<String, Integer>>(map.entrySet());
+
+		/*Collections.sort(list, new Comparator<Entry<String, Integer>>() {
+			@Override
+			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+				return o1.getValue().compareTo(o2.getValue());
+			}
+		});*/
+		
+		 List list = new LinkedList(map.entrySet());
+	       // Defined Custom Comparator here
+	       Collections.sort(list, new Comparator() {
+	            @SuppressWarnings("rawtypes")
+				public int compare(Object o1, Object o2) {
+	               return ((Comparable) ((Map.Entry) (o1)).getValue())
+	                  .compareTo(((Map.Entry) (o2)).getValue());
+	            }
+	       });	
+
+	       for (Iterator it = list.iterator(); it.hasNext();) {
+	              Map.Entry entry = (Map.Entry) it.next();
+	              System.out.println(entry.getValue()+" "+entry.getKey());
+	       } 
+	       
+}
+}

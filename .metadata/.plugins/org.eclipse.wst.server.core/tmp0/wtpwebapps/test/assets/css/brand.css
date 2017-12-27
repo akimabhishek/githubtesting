@@ -1,0 +1,53 @@
+.header {
+  background-image: none;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484c+0,000000+100 */
+  background: #45484c; /* Old browsers */
+  background: -moz-linear-gradient(top, #45484c 0%, #000000 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #45484c), color-stop(100%, #000000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #45484c 0%, #000000 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #45484c 0%, #000000 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #45484c 0%, #000000 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #45484c 0%, #000000 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45484c', endColorstr='#000000', GradientType=0); /* IE6-9 */
+  border-radius: 12px 12px 0 0;
+}
+
+.header>.row {
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+.headerLabel h5 {
+  color: #fff !important;
+}
+
+@media ( min-width : 768px) {
+  .header>.row {
+    background-image: url(https://cdiwl-appstest.i.daimler.com/internet/brand/6.0.5/static/mbusa/header_logo.png);
+    background-repeat: no-repeat;
+  }
+}
+
+.container {
+  border-radius: 12px;
+  background-color: #000;
+}
+
+.footer {
+    color: #fff;
+}
+
+.footer .footerHidden {
+    display: none !important;
+}
+
+.footer a:hover, .header a:hover {
+    color: #fff !important;
+    display: inline;
+    text-decoration: none !important;
+}
+
+.header .menu .select-style {
+    display: none;
+}
+#brand{background: url(https://cdiwl-appstest.i.daimler.com/internet/brand/6.0.5/bg/mbusa/5);}

@@ -1,0 +1,29 @@
+package com.test.jsoup;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class TestUrls {
+
+	public static void main(String[] args) {
+	
+		Document doc = null;
+		try 
+		{
+			doc = Jsoup.connect("http://79.127.127.112").get();
+			Elements links = doc.select("a[href]");
+			for(Element link : links)
+			{
+				System.out.println("\nlink : "+link.attr("href"));
+				System.out.println("Text : "+link.text());
+			}
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
+
+	}
+
+}
